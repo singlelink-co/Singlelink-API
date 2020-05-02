@@ -8,12 +8,29 @@
    Author URI: https://nclagroup.org
    License: unlicensed
    */
-
+/*
 if ( !class_exists( 'SingleLink' ) ) {
 	class SingleLink
 	{
-       
+       function init() {
+		   // Require other functions
+		   require('');
+	   }
 	}
 }
+
+SingleLink::init();
+*/
+
+namespace SingleLink;
+
+class core {
+	function init() {
+		include '';
+	}
+}
+
+// Launch SingleLink
+\SingleLink\core::init();
 
  ?>
