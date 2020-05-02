@@ -1,6 +1,6 @@
 <?php
 
-	use SingleLink;
+	namespace SingleLink;
 
 	class Version_Management {
 
