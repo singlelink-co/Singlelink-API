@@ -109,7 +109,7 @@
 	
 			if( ! empty( $args->slug ) ) { // If there is a slug
 				
-				if( $args->slug == current( explode( '/' , $this->basename ) ) ) { // And it's our slug
+				if( $args->slug == current( explode( '/' , $this->basename ) ) ) { // And ift's our slug
 	
 					$this->get_repository_info(); // Get our repo info
 	

@@ -33,6 +33,10 @@ class core {
 		$updater->set_repository( 'SingleLink' );
 		$updater->authorize( '3fe4f97f2f19ab79059619cccc48a135331369cc' );
 		$updater->initialize();
+
+		// Enable Themes
+		include_once( plugin_dir_path( __FILE__ ) . '/includes/themes.php');
+		$themes =  new \SingleLink\Themes();
 	}
 }
 
