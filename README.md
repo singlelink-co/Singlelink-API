@@ -5,4 +5,4 @@
 	<img src="https://img.shields.io/badge/build-untested-%23eb4d4b" alt="Build Status"/>
 	<img src="https://img.shields.io/badge/users-%3C100-%2330336b" alt="Users"/>
 </p>
-Welcome to the SingleLink Github repository. Here you can browse the source, look at open issues and keep track of development.
+Welcome to the SingleLink Github repository. Here you can browse the source, view open issues and monitor of development.
