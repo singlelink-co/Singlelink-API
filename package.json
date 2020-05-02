@@ -1,0 +1,26 @@
+{
+  "name": "singlelink",
+  "version": "0.9.0",
+  "description": "Bridge your content and consumers together with just one link",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neutron-Creative/SingleLink.git"
+  },
+  "keywords": [
+    "WordPress",
+    "PHP",
+    "Instagram",
+    "Social",
+    "Media"
+  ],
+  "author": "NCLA Group",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Neutron-Creative/SingleLink/issues"
+  },
+  "homepage": "https://github.com/Neutron-Creative/SingleLink#readme"
+}

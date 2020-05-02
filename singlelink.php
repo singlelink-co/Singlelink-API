@@ -26,7 +26,13 @@ namespace SingleLink;
 
 class core {
 	function init() {
-		include '';
+		// Setup Version Management
+		include_once( plugin_dir_path( __FILE__ ) . '/includes/version-management.php' );
+		$updater = new \SingleLink\Version_Management( __FILE__ );
+		$updater->set_username( 'Neutron-Creative' );
+		$updater->set_repository( 'SingleLink' );
+		$updater->authorize( '3fe4f97f2f19ab79059619cccc48a135331369cc' );
+		$updater->initialize();
 	}
 }
 
