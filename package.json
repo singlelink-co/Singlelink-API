@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Neutron-Creative/SingleLink/issues"
   },
-  "homepage": "https://github.com/Neutron-Creative/SingleLink#readme"
+  "homepage": "https://github.com/Neutron-Creative/SingleLink#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "get-port": "^5.1.1"
+  }
 }
