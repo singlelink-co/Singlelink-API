@@ -13,9 +13,7 @@ let port;
         port = await getPort({port: 80});
     }
 
-    app.get('/', (req, res) => {
-        res.send('Hello world! 👋🤠');
-    });
+    app.get('/', require('./functions/Misc/status'));
 
     app.listen(port, () => {
         console.log(`🔗 Singlelink API listening on port ${port}`)
