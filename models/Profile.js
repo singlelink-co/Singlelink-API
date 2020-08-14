@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var ProfileSchema = new mongoose.Schema({
-    avatar_url: String,
+    image_url: String,
     headline: String,
     caption: String,
     social: [{
