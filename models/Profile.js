@@ -18,6 +18,7 @@ var ProfileSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }],
+    custom_css: String
 });
 
 ProfileSchema.virtual('permissions').get(function() {

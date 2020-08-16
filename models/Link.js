@@ -5,17 +5,18 @@ var LinkSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    link: {
+    url: {
         type: String,
         default: '#',
         required: true
     },
     style: String,
-    profile: {
+    parent: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Profile',
         required: true
     },
+    order: Number
 });
 
 module.exports = mongoose.model('Link', LinkSchema);
