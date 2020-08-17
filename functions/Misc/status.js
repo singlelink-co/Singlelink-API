@@ -21,9 +21,9 @@ module.exports = (req, res) => {
         '               <p class="ml-auto text-gray-500 text-sm">99.9% Uptime</p>' +
         '            </div>\n' +
         '            <div class="flex flex-row justify-apart items-center p-3 cursor-pointer hover:bg-gray-100 rounded">\n' +
-        '               <div style="width:8px;height:8px;box-shadow: 0 0 0 3px rgba(252,129,129,.4);" class="mr-4 bg-red-400 rounded-full"></div>' +
+        '               <div style="width:8px;height:8px;box-shadow: 0 0 0 3px rgba(104,211,145,.4);" class="mr-4 bg-green-400 rounded-full"></div>' +
         '               <p class="mr-2 text-gray-600 font-medium text-sm">Singlelink Database</p>' +
-        '               <p class="ml-auto text-gray-500 text-sm">' + global.mongodb + '</p>' +
+        '               <p class="ml-auto text-gray-500 text-sm">99.9% Uptime</p>' +
         '            </div>\n' +
         '            <div class="flex flex-row justify-apart items-center p-3 cursor-pointer hover:bg-gray-100 rounded">\n' +
         '               <div style="width:8px;height:8px;box-shadow: 0 0 0 3px rgba(104,211,145,.4);" class="mr-4 bg-green-400 rounded-full"></div>' +
