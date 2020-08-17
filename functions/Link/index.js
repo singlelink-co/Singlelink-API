@@ -11,5 +11,7 @@ var LinkController = express();
 LinkController.use(require('../../middleware/auth'));
 
 LinkController.post('/create', require('./create'));
+LinkController.post('/update', require('./update'));
+LinkController.post('/reorder', require('./reorder'));
 
 module.exports = LinkController;

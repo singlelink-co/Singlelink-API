@@ -21,7 +21,7 @@ module.exports = (req, res) => {
                 hash: md5(req.body.email)
             }).save(function (err, user) {
 
-                new Profile({parent: user._id}).save(function(err, profile) {
+                new Profile({parent: user._id, handle: user._id}).save(function(err, profile) {
                     user.active_profile = profile._id;
                     user.save(function (err, user) {
                         if (err) return res.send(err);
