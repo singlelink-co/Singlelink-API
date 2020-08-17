@@ -33,7 +33,12 @@ var ProfileSchema = new mongoose.Schema({
           'published-18+'
       ]
     },
-    custom_css: String
+    custom_css: String,
+    custom_html: String,
+    theme: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Theme',
+    },
 });
 
 ProfileSchema.virtual('permissions').get(function() {
