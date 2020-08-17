@@ -46,7 +46,7 @@ app.use(bodyParser.urlencoded({
 
     app.use('/user', require('./functions/User'));
     app.use('/profile', require('./functions/Profile'));
-    app.use('/link', require('./functions/link'));
+    app.use('/link', require('./functions/Link'));
 
     app.listen(port, () => {
         console.log(`🔗 Singlelink API listening on port ${port}`)
