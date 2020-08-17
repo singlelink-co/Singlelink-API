@@ -1,9 +1,14 @@
 var mongoose = require('mongoose');
 
 var ProfileSchema = new mongoose.Schema({
+    handle: {
+        type: String,
+        unique: true,
+        required: true
+    },
     image_url: String,
     headline: String,
-    caption: String,
+    subtitle: String,
     social: [{
         icon: String,
         link: String,
@@ -18,6 +23,16 @@ var ProfileSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }],
+    visibility: {
+      type: String,
+      default: 'unpublished',
+      required: true,
+      enum: [
+          'unpublished',
+          'published',
+          'published-18+'
+      ]
+    },
     custom_css: String
 });
 

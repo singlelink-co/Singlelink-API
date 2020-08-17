@@ -16,7 +16,11 @@ var LinkSchema = new mongoose.Schema({
         ref: 'Profile',
         required: true
     },
-    order: Number
+    custom_css: String,
+    order: {
+        type: Number,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('Link', LinkSchema);
