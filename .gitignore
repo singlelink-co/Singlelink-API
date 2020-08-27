@@ -1,3 +1,7 @@
+.vim
 .idea
+.eclipse
+.atom
+.vscode
 node_modules
 config.js
