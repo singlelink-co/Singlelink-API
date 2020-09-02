@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-    let port = 80;
+    port = 80;
 
     app.get('/', require('./functions/Misc/status'));
 
