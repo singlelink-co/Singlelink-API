@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var Profile = mongoose.model('Profile');
 
 module.exports = (req, res) => {
+    if(req.body.image_url) req.user.active_profile.image_url = req.body.image_url;
     if(req.body.headline) req.user.active_profile.headline = req.body.headline;
     if(req.body.subtitle) req.user.active_profile.subtitle = req.body.subtitle;
     if(req.body.handle) req.user.active_profile.handle = req.body.handle;
