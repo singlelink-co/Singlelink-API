@@ -13,6 +13,7 @@ module.exports = (req, res) => {
             label: req.body.label,
             subtitle: req.body.subtitle || null,
             url: req.body.url,
+            custom_css: req.body.custom_css || null,
             parent: req.user.active_profile._id,
             order: count
         }).save((err, link) => {
