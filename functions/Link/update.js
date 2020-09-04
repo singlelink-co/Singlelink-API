@@ -9,6 +9,7 @@ module.exports = (req, res) => {
     }, (err, link) => {
         if(err) return res.send(err);
         if(req.body.label) link.label = req.body.label;
+        if(req.body.subtitle) link.subtitle = req.body.subtitle;
         if(req.body.url) link.url = req.body.url;
         if(req.body.custom_css) link.custom_css = req.body.custom_css;
         link.save((err, link) => {

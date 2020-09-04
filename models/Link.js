@@ -5,6 +5,7 @@ var LinkSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    subtitle: String,
     url: {
         type: String,
         default: '#',

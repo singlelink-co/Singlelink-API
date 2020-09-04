@@ -11,6 +11,7 @@ module.exports = (req, res) => {
         if(!count) count = 0;
         new Link({
             label: req.body.label,
+            subtitle: req.body.subtitle || null,
             url: req.body.url,
             parent: req.user.active_profile._id,
             order: count
