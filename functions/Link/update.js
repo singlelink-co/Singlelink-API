@@ -9,9 +9,9 @@ module.exports = (req, res) => {
     }, (err, link) => {
         if(err) return res.send(err);
         if(req.body.label) link.label = req.body.label;
-        if(req.body.subtitle) link.subtitle = req.body.subtitle;
+        link.subtitle = req.body.subtitle || null;
         if(req.body.url) link.url = req.body.url;
-        link.custom_css = req.body.custom_css || '';
+        link.custom_css = req.body.custom_css || null;
         link.save((err, link) => {
             if(err) return res.send(err);
             Link.find({
