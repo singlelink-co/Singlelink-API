@@ -22,8 +22,8 @@ module.exports = function(req, res, next) {
                 if(err) res.send(err);
                 Profile.find({parent: user._id}, function(err, profiles) {
                     if(err) res.send(err);
+                    user.profiles = profiles || [];
                     req.user = user;
-                    req.user.profiles = profiles || [];
                     next();
                 })
             });
