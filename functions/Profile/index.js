@@ -22,4 +22,6 @@ ProfileController.post('/update', require('./update'));
 
 ProfileController.post('/links', require('./links'));
 
+ProfileController.post('/list', require('./list'));
+
 module.exports = ProfileController;
