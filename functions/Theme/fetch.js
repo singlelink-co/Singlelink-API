@@ -11,12 +11,13 @@ module.exports = (req, res) => {
             if(err) return res.send(err);
             payload = payload.concat(themes);
             Theme.find({
-                global: true
+                global: true,
             })
-                .limit(3)
                 .exec((err, themes) => {
                     if(err) return res.send(err);
-                    payload = payload.concat(themes);
+                    for(let i=0;i<themes.length;i++) {
+                        if(!themes[i].parent.equals(req.user._id)) payload = payload.concat(themes[i]);
+                    }
                     return res.send(payload);
                 });
         });
