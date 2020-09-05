@@ -12,5 +12,6 @@ UserController.all('/create', require('./create'));
 UserController.use(require('../../middleware/auth'));
 
 UserController.all('/fetch', require('./fetch'));
+UserController.all('/set-active', require('./set-active'));
 
 module.exports = UserController;

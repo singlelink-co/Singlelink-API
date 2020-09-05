@@ -12,6 +12,8 @@ ProfileController.post('/fetch', require('./fetch'));
 // From here on out, require authentication
 ProfileController.use(require('../../middleware/auth'));
 
+ProfileController.post('/create', require('./create'));
+
 ProfileController.post('/fetch-preview', require('./fetch-preview'));
 
 ProfileController.post('/activate-theme', require('./activate-theme'));
