@@ -23,7 +23,7 @@ module.exports = function(req, res, next) {
                 Profile.find({parent: user._id}, (err, profiles) => {
                     if(err) res.send(err);
                     req.user = user;
-                    req.user.profiles = profiles;
+                    req.user.profiles = profiles || null;
                     next();
                 })
             });
