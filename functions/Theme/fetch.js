@@ -11,7 +11,7 @@ module.exports = (req, res) => {
             if(err) return res.send(err);
             payload = payload.concat(themes);
             Theme.find({
-                public: true
+                global: true
             })
                 .limit(3)
                 .exec((err, themes) => {
