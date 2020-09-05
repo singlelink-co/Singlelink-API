@@ -25,7 +25,8 @@ var ThemeSchema = new mongoose.Schema({
           secondary: String
       }
     },
-    custom_css: String
+    custom_css: String,
+    custom_html: String
 });
 
 module.exports = mongoose.model('Theme', ThemeSchema);
