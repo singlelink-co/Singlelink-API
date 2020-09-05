@@ -24,4 +24,6 @@ ProfileController.post('/links', require('./links'));
 
 ProfileController.post('/list', require('./list'));
 
+ProfileController.post('/destroy', require('./destroy'));
+
 module.exports = ProfileController;

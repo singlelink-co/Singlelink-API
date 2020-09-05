@@ -4,7 +4,7 @@ const Profile = mongoose.model('Profile');
 
 module.exports = async function(req, res) {
     new Profile({
-        handle: req.body.handle ||  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+        handle: req.body.handle ||  Math.random().toString(36).substring(2, 6) + Math.random().toString(36).substring(2, 6),
         parent: req.user._id,
         image_url: req.body.image_url || null,
         headline: req.body.headline || null,
