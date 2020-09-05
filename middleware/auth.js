@@ -6,7 +6,8 @@ var jwt = require('jsonwebtoken');
 
 var config = global.config;
 
-var User = mongoose.model('User');
+const User = mongoose.model('User');
+const Profile = mongoose.model('Profile');
 
 module.exports = function(req, res, next) {
     var response = res;
@@ -18,9 +19,13 @@ module.exports = function(req, res, next) {
         User.findOne({email: decoded.email})
             .populate('active_profile')
             .exec(function(err, user) {
-                if(err) res.end(err);
-                req.user = user;
-                next();
+                if(err) res.send(err);
+                Profile.find({parent: user._id}, (err, profiles) => {
+                    if(err) res.send(err);
+                    req.user = user;
+                    req.user.profiles = profiles;
+                    next();
+                })
             });
     })
 }
