@@ -20,12 +20,8 @@ module.exports = function(req, res, next) {
             .populate('active_profile')
             .exec(function(err, user) {
                 if(err) res.send(err);
-                Profile.find({parent: user._id}, function(err, profiles) {
-                    if(err) res.send(err);
-                    user.profiles = profiles || [];
-                    req.user = user;
-                    next();
-                })
+                req.user = user;
+                next();
             });
     })
 }
