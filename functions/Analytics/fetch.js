@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
         // Filter published profiles from unpublished profiles
         let profiles_published = 0;
         for(let i=0;i<profiles.length;i++) {
-            if(profiles[i].visibility == 'published') profiles_published++;
+            if(profiles[i].visibility != 'unpublished') profiles_published++;
         }
 
     // Return payload
