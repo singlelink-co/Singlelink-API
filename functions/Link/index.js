@@ -14,5 +14,6 @@ LinkController.post('/create', require('./create'));
 LinkController.post('/update', require('./update'));
 LinkController.post('/destroy', require('./destroy'));
 LinkController.post('/reorder', require('./reorder'));
+LinkController.post('/reset-order', require('./reset-order'));
 
 module.exports = LinkController;

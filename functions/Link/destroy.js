@@ -2,17 +2,18 @@ var mongoose = require('mongoose');
 
 var Link = mongoose.model('Link');
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
     if(!req.body.target) return res.status(400).send('Target required');
     Link.findOneAndDelete({
         _id: req.body.target
-    }, (err) => {
+    }, async (err) => {
         if(err) return res.send(err);
-        Link.find({
-            parent: req.user.active_profile
-        }, (err, links) => {
-            if(err) return res.send(err);
-            res.send(links);
-        });
+        let links = await Link.find({parent:req.user.active_profile._id}).sort({"order":1});;
+        for(let i=0;i<links.length;i++) {
+            links[i].order = i;
+            await links[i].save();
+        }
+        links = await Link.find({parent:req.user.active_profile._id});
+        return res.send(links);
     })
 }
