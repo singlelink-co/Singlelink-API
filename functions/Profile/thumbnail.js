@@ -26,7 +26,12 @@ module.exports = async (req, res) => {
 
         let thumbnail_img = "data:" + thumbnail.headers["content-type"] + ";base64," + Buffer.from(thumbnail.data).toString('base64')
 
-        return res.send(thumbnail_img);
+        res.writeHead(200, {
+            'Content-Type': 'image/png',
+            'Content-Length': thumbnail.data.length
+        });
+        return res.end(thumbnail.data);
+        return res.sendFile(thumbnail.data);
 
     }
 }
