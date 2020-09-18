@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
             responseType: "arraybuffer"
         })
     } catch (err) {
-        return res.send(err.message || 'Error!');
+        return res.send(err.message + '</br>' + url || 'Error!');
     } finally {
         //return res.send(btoa(thumbnail.data));
 
