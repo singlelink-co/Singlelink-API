@@ -9,6 +9,7 @@ var ProfileController = express();
 
 ProfileController.post('/fetch', require('./fetch'));
 
+// Thumbnail routing
 ProfileController.all('/thumbnail/:handle', require('./thumbnail'));
 
 // From here on out, require authentication
