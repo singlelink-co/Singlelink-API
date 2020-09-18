@@ -35,10 +35,11 @@ app.use(bodyParser.urlencoded({
 
     app.get('/', require('./functions/Misc/status'));
 
-    var User = require('./models/User');
-    var Profile = require('./models/Profile');
-    var Link = require('./models/Link');
-    var Theme = require('./models/Theme');
+    const User = require('./models/User');
+    const Profile = require('./models/Profile');
+    const Link = require('./models/Link');
+    const Theme = require('./models/Theme');
+    const Visit = require('./models/Visit');
 
     app.use('/user', require('./functions/User'));
     app.use('/profile', require('./functions/Profile'));
