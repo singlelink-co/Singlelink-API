@@ -1,5 +1,7 @@
 const axios = require('axios');
 
+// All good 😎
+
 module.exports = async (req, res) => {
     if(!req.params.handle) return res.status(400).send('Handle required to make request');
     let url, thumbnail;
