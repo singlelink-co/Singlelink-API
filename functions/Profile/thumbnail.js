@@ -1,8 +1,6 @@
 const axios = require('axios');
 const fs = require('fs');
 
-const api_key = require('../../config.js').capture_key;
-
 module.exports = async (req, res) => {
     if(!req.params.handle) return res.status(400).send('Handle required to make request');
     let url, thumbnail;
@@ -16,7 +14,7 @@ module.exports = async (req, res) => {
         y: final_size.y/scale
     }
     try {
-        url = 'https://capture.neutroncreative.com/api/v1/capture?apiKey=' + api_key + '&url=https://app.singlelink.co/u/' + req.params.handle + '&size=' + resolution.x + 'x' + resolution.y + '&crop=true&scale=' + scale;
+        url = 'https://capture.neutroncreative.com/api/v1/capture?apiKey=' + global.config.capture_key + '&url=https://app.singlelink.co/u/' + req.params.handle + '&size=' + resolution.x + 'x' + resolution.y + '&crop=true&scale=' + scale;
         thumbnail = await axios.get(url, {
             responseType: "arraybuffer"
         })
