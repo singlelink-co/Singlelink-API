@@ -9,6 +9,8 @@ var ProfileController = express();
 
 ProfileController.post('/fetch', require('./fetch'));
 
+ProfileController.all('/thumbnail/:handle', require('./thumbnail'));
+
 // From here on out, require authentication
 ProfileController.use(require('../../middleware/auth'));
 
