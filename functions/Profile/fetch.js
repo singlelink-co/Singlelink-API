@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 
 const Profile = mongoose.model('Profile');
+const Visit = mongoose.model('Visit');
 const Link = mongoose.model('Link');
 const User = mongoose.model('User');
 const Theme = mongoose.model('Theme');
 
 module.exports = (req, res) => {
-    if(!req.body.handle) return res.status(400).send('Handle required to find account');
+    if(!req.body.handle && !req.params.handle) return res.status(400).send('Handle required to find account');
     let payload = {
         profile: null,
         links: null,
@@ -14,7 +15,7 @@ module.exports = (req, res) => {
         theme: null
     };
     Profile.findOne({
-        handle: req.body.handle
+        handle: req.body.handle || req.params.handle
     }, async (err, profile) => {
             if(err) return res.send(err);
             if(!profile) return res.status(404).send('Profile not found');
@@ -29,9 +30,13 @@ module.exports = (req, res) => {
                     payload.user = user;
                     Link.find({
                         parent: profile._id
-                    }, (err, links) => {
+                    }, async (err, links) => {
                         if(err) return res.send(err);
                         payload.links = links || [];
+                        let visit = await new Visit({
+                            type: 'Page',
+                            referral: profile._id
+                        }).save();
                         res.send(payload);
                     });
                 })

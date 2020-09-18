@@ -8,6 +8,7 @@ var ProfileController = express();
 //ProfileController.all('/', require('./'));
 
 ProfileController.post('/fetch', require('./fetch'));
+ProfileController.all('/fetch/:handle', require('./fetch'));
 
 // Thumbnail routing
 ProfileController.all('/thumbnail/:handle', require('./thumbnail'));
